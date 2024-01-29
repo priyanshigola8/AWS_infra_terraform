@@ -18,10 +18,10 @@ variable "cidr_block" {
   description = "vpc cidr block"
 }
 
-variable "vpc_name" {
-  type        = string
-  description = "Name of the vNet"
-}
+# variable "vpc_name" {
+#   type        = string
+#   description = "Name of the vNet"
+# }
 
 variable "access_key" {
   type = string
