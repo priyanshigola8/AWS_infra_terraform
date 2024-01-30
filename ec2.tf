@@ -1,6 +1,7 @@
 resource "aws_instance" "test-1" {
   ami           = var.ami
   instance_type = var.instance_type
+  subnet_id = aws_subnet.public_subnet.id
   tags = {
     Name = var.tags
   }
