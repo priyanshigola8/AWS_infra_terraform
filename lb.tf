@@ -22,8 +22,5 @@
 #   internal           = false
 #   load_balancer_type = "application"
 #   vpc_id = ""
-#  tags = {
-#    Name = var.tags
-#  }
 # }
 
