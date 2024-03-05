@@ -1,4 +1,4 @@
-########## EC2 instance
+########################################## EC2 instance ##################################################
 
 variable "ami" {
   type        = string
@@ -12,10 +12,10 @@ variable "tags" {
   type        = string
   description = "common tag"
 }
-variable "cidr_block" {
-  type        = string
-  description = "vpc cidr block"
-}
+# variable "cidr_block" {
+#   type        = string
+#   description = "vpc cidr block"
+# }
 variable "access_key" {
   type = string
   description = "access key"
@@ -29,7 +29,7 @@ variable "region" {
   description = "region"
 }
 
-########## s3 bucket
+####################################### s3 bucket #################################################
 
 variable "bucket" {
   type = string
@@ -64,7 +64,7 @@ variable "s3_tags" {
   description = "tag"
 }
 
-############### VPC
+################################################## VPC #####################################################
 
 variable "cidr_block" {
   type = string
@@ -74,6 +74,9 @@ variable "vpc_tags" {
   type = string
   description = "VPC tag"
 }
+
+################################################## Subnets #####################################################
+
 variable "public_subnet_cidr" {
   type = string
   description = "Public subnet CIDR range"
@@ -98,10 +101,16 @@ variable "private_subnet_tags" {
   type = string
   description = "Private subnet tag"
 }
+
+################################################## Internet Gateway #####################################################
+
 variable "gw_tags" {
   type = string
   description = "Internet Gateway tag"
 }
+
+#################################################### Route Tables #####################################################
+
 variable "route_table_cidr" {
   type = string
   description = "Route table CIDR range"
@@ -111,7 +120,79 @@ variable "route_table_tags" {
   description = "Route table tag"
 }
 
-variable "aws_security_group" {
+########################################################### Security Group ################################################
+
+variable "aws_security_group_name" {
   type = string
-  description = "aws_security_group"
+  description = "aws_security_group name"
+}
+variable "aws_security_group_description" {
+  type = string
+  description = "aws_security_group description"
+}
+variable "aws_security_group_tag" {
+  type = string
+  description = "aws security group tags"
+}
+variable "security_group_inbound_cidr" {
+  type = string
+  description = "CIDR range to allow inbound traffic"
+}
+variable "allow_inbound_from_port" {
+  type = number
+  description = "allow inbound traffic from port number"
+}
+variable "inbound_ip_protocol" {
+  type = string
+  description = "Inbound ip protocol"
+}
+variable "allow_inbound_to_port" {
+  type = number
+  description = "allow inbound traffic to port number"
+}
+variable "security_group_outbound_cidr" {
+  type = string
+  description = "CIDR range to allow outbound traffic"
+}
+variable "allow_outbound_from_port" {
+  type = number
+  description = "allow outbound traffic from port number"
+}
+variable "outbound_ip_protocol" {
+  type = string
+  description = "Outbound ip protocol"
+}
+variable "allow_outbound_to_port" {
+  type = number
+  description = "allow outbound traffic to port number"
+}
+
+#################################################### IAM Role ######################################################
+
+variable "aws_iam_role_name" {
+  type = string
+  description = "aws iam role name"
+}
+variable "aws_iam_role_policy" {
+  type = string
+  description = "aws iam role policy"
+}
+variable "aws_iam_role_policy_arn" {
+  type = string
+  description = "aws iam role policy arn"
+}
+
+################################################ EKS Cluster #########################################################
+
+variable "aws_eks_cluster_name" {
+  type = string
+  description = "aws eks cluster name"
+}
+variable "aws_eks_access_authentication_mode" {
+  type = string
+  description = "aws eks access authentication mode"
+}
+variable "bootstrap_cluster_creator_admin_permissions" {
+  type = bool
+  description = "aws eks bootstrap cluster creator admin permissions"
 }
