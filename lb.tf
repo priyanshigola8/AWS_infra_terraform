@@ -17,9 +17,9 @@
 # }
 
 
-# resource "aws_lb" "terraform-lb" {
-#   name               = "test-lb-tf"
-#   internal           = false
-#   load_balancer_type = "application"
-#   vpc_id = ""
-# }
+resource "aws_lb" "terraform-lb" {
+  name               = "test-lb-tf"
+  internal           = false
+  load_balancer_type = "application"
+  vpc_id = ""
+}
